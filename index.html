@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Case Study - Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Menghindari heading tertutup oleh sticky navbar saat scroll */
+        html {
+            scroll-padding-top: 90px; 
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex max-w-7xl items-center justify-between p-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2">
+                <span class="text-xl font-bold tracking-tight text-emerald-600">🚀 StudioProjek</span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
+                <a href="#hero" class="hover:text-emerald-600 transition-colors">Overview</a>
+                <a href="#define" class="hover:text-emerald-600 transition-colors">1. Define</a>
+                <a href="#ideate" class="hover:text-emerald-600 transition-colors">2. Ideate</a>
+                <a href="#prototype" class="hover:text-emerald-600 transition-colors">3. Prototype</a>
+            </nav>
+
+            <div>
+                <a href="#prototype" class="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-all">
+                    Coba Prototype
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="hero" class="relative overflow-hidden bg-white py-20 lg:py-28 border-b border-slate-100">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
+                <div class="space-y-6">
+                    <span class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/10">
+                        UI/UX Case Study
+                    </span>
+                    <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
+                        Gonceng: Solusi Transportasi Modern untuk Mobilitas Anda
+                    </h1>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Gonceng hadir sebagai aplikasi transportasi online yang berfokus pada kemudahan akses bagi seluruh kalangan, termasuk pengguna yang jarang memakai aplikasi atau gaptek, dengan menghadirkan antarmuka yang bersih, cepat, dan transparan.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
+                        <div>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Timeline</p>
+                            <p class="text-sm font-semibold text-slate-700">4 Minggu</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Tools Used</p>
+                            <p class="text-sm font-semibold text-slate-700">Figma, FigJam, Miro</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex justify-center gap-4 sm:gap-6 items-center w-full max-w-md mx-auto">
+                    <img src="img/0.png" alt="Mockup Utama Tampilan 1" class="w-[48%] rounded-2xl shadow-xl border border-slate-100 transition-transform duration-300 hover:scale-105">
+                    <img src="img/10.png" alt="Mockup Utama Tampilan 2" class="w-[48%] rounded-2xl shadow-xl border border-slate-100 transition-transform duration-300 hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="define" class="py-20 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">1. Tahap Define</h2>
+                <p class="mt-4 text-lg text-slate-600">
+                    Berdasarkan hasil empathy dan riset pengguna, kami merumuskan inti permasalahan yang dihadapi oleh target audiens melalui *Problem Statement* dan framework *How Might We (HMW)*.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
+                <div class="rounded-2xl bg-white p-8 border border-slate-200 shadow-sm lg:col-span-2 space-y-4">
+                    <h3 class="text-lg font-bold text-slate-900">Problem Statement</h3>
+                    <p class="text-slate-600 italic">
+                        "Pengguna yang jarang memakai dan gaptek seperti Bu Lasmini, memerlukan tampilan yang mudah dibaca dan mudah dipahami, jaminan transparansi terhadap driver, serta proses pemesanan yang membuat pengguna seperti mereka tidak akan merasa cemas terhadap layanan yang diberikan."
+                    </p>
+                    <div class="mt-6 w-full rounded-xl overflow-hidden border border-slate-100 shadow-sm">
+                        <!-- Pastikan kamu menyimpan gambar Affinity Diagram / Persona dengan nama define-assets.png di folder img -->
+                        <img src="img/define-assets.png" alt="User Persona & Affinity Diagram Gonceng" class="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.01]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="hidden aspect-video w-full bg-slate-100 flex-col items-center justify-center border border-dashed border-slate-300 text-sm text-slate-400">
+                            <span>Taruh file gambar <b class="text-slate-600">define-assets.png</b> di folder <b class="text-slate-600">img/</b></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl bg-emerald-900 p-8 text-white flex flex-col justify-between shadow-sm">
+                    <div>
+                        <h3 class="text-lg font-bold text-emerald-300 mb-4">How Might We?</h3>
+                        <ul class="space-y-4 text-sm text-emerald-100 list-decimal list-inside">
+                            <li>Menyederhanakan tampilan aplikasi agar tidak terasa padat dan mempermudah bagi pengguna?</li>
+                            <li>Menyediakan proses pemilihan fitur dengan ikon atau label yang mudah dipahami?</li>
+                            <li>Membuat tampilan fitur aplikasi transportasi menjadi lebih efektif dan efisien tanpa mengorbankan kejelasan informasi?</li>
+                        </ul>
+                    </div>
+                    <p class="text-[11px] text-emerald-400 mt-6">Fokus pada penyederhanaan arsitektur informasi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ideate" class="py-20 bg-slate-100/50 border-b border-slate-200">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">2. Tahap Ideate</h2>
+                <p class="mt-4 text-lg text-slate-600">
+                    Kami mengeksplorasi berbagai alternatif solusi menggunakan teknik brainstorming, Crazy 8's, hingga penyusunan Wireframe (Low-Fidelity) sebelum melangkah ke desain akhir.
+                </p>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
+                
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="font-bold text-slate-900">Crazy 8's & Low-Fi Sketches</h3>
+                    <img src="img/Frame 1.jpeg" alt="Sketsa Tangan dan Crazy 8s" class="w-full aspect-video object-cover rounded-xl border border-slate-100 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
+                    <p class="text-sm text-slate-600">Eksplorasi cepat layout antarmuka menggunakan kertas dan pensil untuk menyaring ide-ide liar menjadi solusi struktural.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="font-bold text-slate-900">Information Architecture & Design System</h3>
+                    <img src="img/IA.png" alt="Information Architecture" class="w-full aspect-video object-cover rounded-xl border border-slate-100 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
+                    <p class="text-sm text-slate-600">Penyusunan peta navigasi aplikasi yang logis dibarengi dengan pembuatan panduan gaya (style guide) warna, tipografi, dan komponen.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="prototype" class="py-20 bg-white">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">3. Interactive Prototype</h2>
+                <p class="mt-4 text-lg text-slate-600">
+                    Berikut adalah prototipe interaktif beresolusi tinggi (High-Fidelity) yang merepresentasikan produk akhir. Silakan klik dan jelajahi alur aplikasinya secara langsung.
+                </p>
+            </div>
+
+            <div class="w-full max-w-5xl mx-auto overflow-hidden rounded-2xl border border-slate-200 shadow-2xl bg-slate-900">
+                <div class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                    </div>
+                    <span class="text-xs text-slate-400 font-mono select-none">figma.com/embed/prototype-kamu</span>
+                    <div class="w-4"></div>
+                </div>
+
+                <div class="w-full aspect-video">
+                    <!-- Menggunakan link iframe baru dengan style w-full h-full agar responsif di dalam container -->
+                    <iframe class="w-full h-full border-0" style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://embed.figma.com/proto/WOrzt18xiLO52rRqSq3EpA/DAWG?node-id=79-385&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <p class="text-xs text-slate-400 mb-3">Mengalami kendala saat memuat frame di atas?</p>
+                <a href="https://www.figma.com/proto/WOrzt18xiLO52rRqSq3EpA/DAWG?node-id=79-385&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-500 transition-colors">
+                    Buka Figma di Tab Baru 
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+            <p class="text-sm">
+                &copy; 2026 StudioProjek. Didesain & Dikoding Sendiri dari Nol.
+            </p>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="https://github.com" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+                <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
