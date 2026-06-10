@@ -1,194 +1,779 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UI/UX Case Study - Portofolio</title>
+    <title>DAWG - UI/UX Case Study</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: '#818CF8', // indigo-400
+                            hover: '#6366F1', // indigo-500
+                            light: 'rgba(99, 102, 241, 0.1)', // indigo-500/10
+                        },
+                        accent: {
+                            DEFAULT: '#22D3EE', // cyan-400
+                        }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(129, 140, 248, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+            /* slate-950 */
+            color: #94A3B8;
+            /* slate-400 */
         }
 
-        html {
-            scroll-padding-top: 90px; 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
+            color: #F8FAFC;
+            /* slate-50 */
+        }
+
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background-color: #020617;
+            background-image:
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0, transparent 50%),
+                radial-gradient(at 50% 0%, rgba(34, 211, 238, 0.03) 0, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.03) 0, transparent 50%);
+        }
+
+        .clean-card {
+            background: rgba(15, 23, 42, 0.6);
+            /* slate-900/60 */
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Refined Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
         }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
 
-    <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
+<body class="antialiased selection:bg-brand selection:text-slate-950 overflow-x-hidden relative">
+
+    <!-- Ambient Background -->
+    <div class="mesh-bg">
+        <!-- Soft decorative blobs -->
+        <div
+            class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-brand/5 blur-[100px] pointer-events-none">
+        </div>
+        <div
+            class="absolute top-[40%] right-[-10%] w-[30%] h-[50%] rounded-full bg-accent/5 blur-[120px] pointer-events-none">
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-[100] w-full border-b border-white/5 bg-slate-950/70 backdrop-blur-xl transition-all">
         <div class="mx-auto flex max-w-7xl items-center justify-between p-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-2">
-                <span class="text-xl font-bold tracking-tight text-emerald-600">🚀 StudioProjek</span>
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <span
+                    class="text-2xl font-black tracking-tighter bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">DAWG.</span>
             </div>
-            
-            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
-                <a href="#hero" class="hover:text-emerald-600 transition-colors">Overview</a>
-                <a href="#define" class="hover:text-emerald-600 transition-colors">1. Define</a>
-                <a href="#ideate" class="hover:text-emerald-600 transition-colors">2. Ideate</a>
-                <a href="#prototype" class="hover:text-emerald-600 transition-colors">3. Prototype</a>
+
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-400">
+                <a href="#hero" class="hover:text-brand transition-colors">Overview</a>
+                <a href="#define" class="hover:text-brand transition-colors">Riset</a>
+                <a href="#ideate" class="hover:text-brand transition-colors">Fitur</a>
+                <a href="#prototype" class="hover:text-brand transition-colors">Prototype</a>
+                <a href="#test" class="hover:text-brand transition-colors">Test</a>
+                <a href="#profile" class="hover:text-brand transition-colors">Kreator</a>
             </nav>
 
             <div>
-                <a href="#prototype" class="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 transition-all">
-                    Coba Prototype
+                <a href="#prototype"
+                    class="rounded-full bg-brand px-5 py-2.5 text-sm font-bold text-slate-950 hover:bg-brand-hover hover:shadow-glow hover:-translate-y-0.5 transition-all duration-300 inline-block">
+                    Lihat Desain
                 </a>
             </div>
         </div>
     </header>
 
-    <section id="hero" class="relative overflow-hidden bg-white py-20 lg:py-28 border-b border-slate-100">
+    <!-- Hero Section -->
+    <section id="hero" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center">
-                <div class="space-y-6">
-                    <span class="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/10">
-                        UI/UX Case Study
-                    </span>
-                    <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl">
-                        Gonceng: Solusi Transportasi Modern untuk Mobilitas Anda
+                <!-- Text Content -->
+                <div class="space-y-8 z-10 pr-0 lg:pr-8">
+
+                    <h1 class="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl leading-[1.1]">
+                        Driver Asli <br>
+                        <span class="bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">Warga
+                            Gen-Z</span>
                     </h1>
-                    <p class="text-lg text-slate-600 leading-relaxed">
-                        Gonceng hadir sebagai aplikasi transportasi online yang berfokus pada kemudahan akses bagi seluruh kalangan, termasuk pengguna yang jarang memakai aplikasi atau gaptek, dengan menghadirkan antarmuka yang bersih, cepat, dan transparan.
+
+                    <p class="text-lg text-slate-400 leading-relaxed max-w-lg">
+                        <strong class="text-slate-200 font-semibold">Nikmati perjalanan perkotaan yang lebih cepat,
+                            mudah, dan efisien!</strong><br>
+                        Bosan dengan perjalanan kota yang gitu-gitu aja? Yuk, mulai pengalaman baru yang disesuaikan
+                        dengan gayamu bersama DAWG.
                     </p>
-                    
-                    <div class="grid grid-cols-2 gap-4 border-t border-slate-100 pt-6">
-                        <div>
-                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Timeline</p>
-                            <p class="text-sm font-semibold text-slate-700">4 Minggu</p>
-                        </div>
-                        <div>
-                            <p class="text-xs text-slate-400 font-medium uppercase tracking-wider">Tools Used</p>
-                            <p class="text-sm font-semibold text-slate-700">Figma, FigJam, Miro</p>
+
+                    <!-- Team / Info Box -->
+                    <div class="clean-card rounded-2xl p-6 sm:p-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Kategori</p>
+                                <p class="text-sm font-semibold text-brand">Aplikasi Transportasi</p>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-1">Tech & Tools
+                                </p>
+                                <p class="text-sm font-semibold text-slate-200">Figma, FigJam</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex justify-center gap-4 sm:gap-6 items-center w-full max-w-md mx-auto">
-                    <img src="img/0.png" alt="Mockup Utama Tampilan 1" class="w-[48%] rounded-2xl shadow-xl border border-slate-100 transition-transform duration-300 hover:scale-105">
-                    <img src="img/10.png" alt="Mockup Utama Tampilan 2" class="w-[48%] rounded-2xl shadow-xl border border-slate-100 transition-transform duration-300 hover:scale-105">
+                <!-- Figma Embed Hero -->
+                <div class="w-full max-w-lg mx-auto lg:ml-auto relative z-10">
+                    <div class="relative rounded-3xl overflow-hidden border border-white/10 bg-slate-900 shadow-2xl">
+                        <div
+                            class="flex items-center justify-between px-4 py-3 bg-slate-950/80 border-b border-white/5">
+                            <div class="flex items-center gap-2">
+                                <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                            </div>
+                            <span class="text-xs text-slate-500 font-mono font-medium">DAWG_Hero.fig</span>
+                            <div class="w-4"></div>
+                        </div>
+                        <div class="w-full h-[500px] sm:h-[600px] bg-slate-950 relative">
+                            <iframe loading="lazy" class="w-full h-full border-0"
+                                src="https://embed.figma.com/design/wLPV49mba6v7wEnTAEcHNt/Untitled?node-id=0-1&embed-host=share"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
 
-    <section id="define" class="py-20 border-b border-slate-200">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">1. Tahap Define</h2>
-                <p class="mt-4 text-lg text-slate-600">
-                    Berdasarkan hasil empathy dan riset pengguna, kami merumuskan inti permasalahan yang dihadapi oleh target audiens melalui *Problem Statement* dan framework *How Might We (HMW)*.
+    <!-- Define Section -->
+    <section id="define" class="py-24 relative border-t border-white/5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand font-bold tracking-widest uppercase text-sm mb-2 block">Tahap 1: Empathy &
+                    Define</span>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mb-6">Kenali <span class="text-brand">User</span>
+                    Kita</h2>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Kami mendalami pola pikir pengguna dari berbagai demografi untuk memahami rasa frustrasi mereka
+                    terhadap aplikasi transportasi konvensional.
                 </p>
             </div>
 
-            <div class="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
-                <div class="rounded-2xl bg-white p-8 border border-slate-200 shadow-sm lg:col-span-2 space-y-4">
-                    <h3 class="text-lg font-bold text-slate-900">Problem Statement</h3>
-                    <p class="text-slate-600 italic">
-                        "Pengguna yang jarang memakai dan gaptek seperti Bu Lasmini, memerlukan tampilan yang mudah dibaca dan mudah dipahami, jaminan transparansi terhadap driver, serta proses pemesanan yang membuat pengguna seperti mereka tidak akan merasa cemas terhadap layanan yang diberikan."
-                    </p>
-                    <div class="mt-6 w-full rounded-xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-                        <img src="img/define-assets.png" alt="User Persona & Affinity Diagram Gonceng" class="w-full h-auto object-cover transition-transform duration-300 hover:scale-[1.01]" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                        <div class="hidden aspect-video w-full bg-slate-100 flex-col items-center justify-center border border-dashed border-slate-300 text-sm text-slate-400">
-                            <span>Taruh file gambar <b class="text-slate-600">define-assets.png</b> di folder <b class="text-slate-600">img/</b></span>
+                <!-- Personas -->
+                <div class="lg:col-span-2 clean-card rounded-[2rem] p-8 sm:p-10">
+                    <h3 class="text-2xl font-bold text-white mb-8 flex items-center gap-3">
+                        <span class="bg-brand-light text-brand p-2.5 rounded-xl"><svg class="w-5 h-5" fill="none"
+                                stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                </path>
+                            </svg></span>
+                        User Personas
+                    </h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div
+                            class="bg-slate-950/50 p-6 rounded-2xl border border-white/5 hover:border-brand/30 transition-all">
+                            <h4 class="font-bold text-lg text-white">Hayyu <span
+                                    class="text-sm font-medium text-slate-500">(19, Mahasiswa)</span></h4>
+                            <p class="text-sm text-slate-400 mt-3 leading-relaxed">Butuh kecepatan & hemat. Frustrasi
+                                dengan driver yang posisinya tidak akurat saat buru-buru ngampus.</p>
+                        </div>
+                        <div
+                            class="bg-slate-950/50 p-6 rounded-2xl border border-white/5 hover:border-brand/30 transition-all">
+                            <h4 class="font-bold text-lg text-white">Devi <span
+                                    class="text-sm font-medium text-slate-500">(25, Karyawati)</span></h4>
+                            <p class="text-sm text-slate-400 mt-3 leading-relaxed">Mengandalkan ojol saat darurat (motor
+                                rusak). Sering panik & butuh penjemputan instan.</p>
+                        </div>
+                        <div
+                            class="bg-slate-950/50 p-6 rounded-2xl border border-white/5 hover:border-brand/30 transition-all">
+                            <h4 class="font-bold text-lg text-white">Ibu Putri <span
+                                    class="text-sm font-medium text-slate-500">(41, Pemilik Toko)</span></h4>
+                            <p class="text-sm text-slate-400 mt-3 leading-relaxed">Masalah utama ada di kapasitas angkut
+                                motor yang sangat terbatas untuk kulakan barang.</p>
+                        </div>
+                        <div
+                            class="bg-slate-950/50 p-6 rounded-2xl border border-white/5 hover:border-brand/30 transition-all">
+                            <h4 class="font-bold text-lg text-white">David & Dellia <span
+                                    class="text-sm font-medium text-slate-500">(Gen-Z)</span></h4>
+                            <p class="text-sm text-slate-400 mt-3 leading-relaxed">Mengeluhkan tarif yang sering berubah
+                                tiba-tiba, calo tiket antarkota, dan pembatalan sepihak.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="rounded-2xl bg-emerald-900 p-8 text-white flex flex-col justify-between shadow-sm">
-                    <div>
-                        <h3 class="text-lg font-bold text-emerald-300 mb-4">How Might We?</h3>
-                        <ul class="space-y-4 text-sm text-emerald-100 list-decimal list-inside">
-                            <li>Menyederhanakan tampilan aplikasi agar tidak terasa padat dan mempermudah bagi pengguna?</li>
-                            <li>Menyediakan proses pemilihan fitur dengan ikon atau label yang mudah dipahami?</li>
-                            <li>Membuat tampilan fitur aplikasi transportasi menjadi lebih efektif dan efisien tanpa mengorbankan kejelasan informasi?</li>
+                <!-- How Might We -->
+                <div
+                    class="lg:col-span-1 bg-gradient-to-br from-brand/20 to-brand/5 border border-brand/20 rounded-[2rem] p-8 sm:p-10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-6 opacity-10">
+                        <svg class="w-32 h-32 text-brand" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7zm2.85 11.1l-.85.6V16h-4v-2.3l-.85-.6A4.997 4.997 0 017 9c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.63-.8 3.16-2.15 4.1z" />
+                        </svg>
+                    </div>
+                    <div class="relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-8">How Might We?</h3>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4 items-start">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center text-slate-950 font-bold text-sm mt-0.5">1</span>
+                                <p class="text-sm text-slate-300 font-medium leading-relaxed">Bagaimana menyajikan tarif
+                                    yang transparan sejak awal untuk menghindari biaya kejutan?</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center text-slate-950 font-bold text-sm mt-0.5">2</span>
+                                <p class="text-sm text-slate-300 font-medium leading-relaxed">Bagaimana mempercepat
+                                    proses pemesanan dalam hitungan detik untuk kondisi darurat?</p>
+                            </li>
+                            <li class="flex gap-4 items-start">
+                                <span
+                                    class="flex-shrink-0 w-8 h-8 rounded-full bg-brand flex items-center justify-center text-slate-950 font-bold text-sm mt-0.5">3</span>
+                                <p class="text-sm text-slate-300 font-medium leading-relaxed">Bagaimana memastikan
+                                    keamanan pengguna secara maksimal selama perjalanan?</p>
+                            </li>
                         </ul>
                     </div>
-                    <p class="text-[11px] text-emerald-400 mt-6">Fokus pada penyederhanaan arsitektur informasi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ideate" class="py-20 bg-slate-100/50 border-b border-slate-200">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">2. Tahap Ideate</h2>
-                <p class="mt-4 text-lg text-slate-600">
-                    Kami mengeksplorasi berbagai alternatif solusi menggunakan teknik brainstorming, Crazy 8's, hingga penyusunan Wireframe (Low-Fidelity) sebelum melangkah ke desain akhir.
-                </p>
-            </div>
-
-            <div class="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-2">
-                
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="font-bold text-slate-900">Crazy 8's & Low-Fi Sketches</h3>
-                    <img src="img/Frame 1.jpeg" alt="Sketsa Tangan dan Crazy 8s" class="w-full aspect-video object-cover rounded-xl border border-slate-100 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
-                    <p class="text-sm text-slate-600">Eksplorasi cepat layout antarmuka menggunakan kertas dan pensil untuk menyaring ide-ide liar menjadi solusi struktural.</p>
                 </div>
 
-                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm space-y-4">
-                    <h3 class="font-bold text-slate-900">Information Architecture & Design System</h3>
-                    <img src="img/IA.png" alt="Information Architecture" class="w-full aspect-video object-cover rounded-xl border border-slate-100 shadow-sm transition-transform duration-300 hover:scale-[1.02]">
-                    <p class="text-sm text-slate-600">Penyusunan peta navigasi aplikasi yang logis dibarengi dengan pembuatan panduan gaya (style guide) warna, tipografi, dan komponen.</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <section id="prototype" class="py-20 bg-white">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">3. Interactive Prototype</h2>
-                <p class="mt-4 text-lg text-slate-600">
-                    Berikut adalah prototipe interaktif beresolusi tinggi (High-Fidelity) yang merepresentasikan produk akhir. Silakan klik dan jelajahi alur aplikasinya secara langsung.
-                </p>
-            </div>
-
-            <div class="w-full max-w-5xl mx-auto overflow-hidden rounded-2xl border border-slate-200 shadow-2xl bg-slate-900">
-                <div class="flex items-center justify-between px-4 py-3 bg-slate-800 border-b border-slate-700">
-                    <div class="flex items-center gap-2">
-                        <div class="w-3 h-3 rounded-full bg-rose-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-amber-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                <!-- Embedded Assets Box -->
+                <div class="lg:col-span-3 clean-card rounded-[2rem] overflow-hidden p-2 mt-4">
+                    <div
+                        class="flex items-center justify-between px-6 py-4 bg-slate-900/80 rounded-t-[1.5rem] border-b border-white/5">
+                        <span class="text-xs text-slate-400 font-mono font-semibold">Research_Assets.fig</span>
                     </div>
-                    <span class="text-xs text-slate-400 font-mono select-none">figma.com/embed/prototype-kamu</span>
+                    <div class="w-full h-[400px] sm:h-[500px] bg-slate-950 rounded-b-[1.5rem] overflow-hidden">
+                        <iframe loading="lazy"
+                            class="w-full h-full border-0 opacity-90 hover:opacity-100 transition-opacity"
+                            src="https://embed.figma.com/board/iMZa3BAok6Z2DE2qEb4PGr/Kelompok-1?node-id=0-1&embed-host=share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Ideate Section -->
+    <section id="ideate" class="py-24 relative border-t border-white/5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand font-bold tracking-widest uppercase text-sm mb-2 block">Tahap 2: Ideation</span>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mb-4">Solusi & <span class="text-brand">Fitur
+                        Utama</span></h2>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Merancang solusi yang berfokus pada kecepatan, keamanan, dan fleksibilitas untuk gaya hidup Gen-Z
+                    yang serba instan.
+                </p>
+            </div>
+
+            <!-- Features Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+
+                <div
+                    class="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/5 hover:border-brand/30 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center mb-6 text-brand group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pendaftaran Super Cepat</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Belum punya akun? Buat akunmu sekarang menggunakan
+                        Email, Username, Nomor Telepon, Google, Apple, atau Facebook tanpa ribet.</p>
+                </div>
+
+                <div
+                    class="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/5 hover:border-emerald-500/30 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-emerald-500/10 rounded-2xl flex items-center justify-center mb-6 text-emerald-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Keamanan Terjamin</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Aplikasi ini dilengkapi dengan sistem verifikasi
+                        kode OTP dua langkah untuk memastikan seluruh aset dan datamu selalu aman.</p>
+                </div>
+
+                <div
+                    class="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/5 hover:border-amber-500/30 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 text-amber-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 19v-8.93a2 2 0 01.89-1.664l7-4.666a2 2 0 012.22 0l7 4.666A2 2 0 0121 10.07V19M3 19a2 2 0 002 2h14a2 2 0 002-2M3 19l6.75-4.5M21 19l-6.75-4.5M3 10l6.75 4.5M21 10l-6.75 4.5m0 0l-1.14.76a2 2 0 01-2.22 0l-1.14-.76">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pemulihan Anti-Ribet</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Lupa password itu wajar. Cukup masukkan alamat
+                        email yang terdaftar untuk menerima tautan pemulihan dalam hitungan detik.</p>
+                </div>
+
+                <div
+                    class="bg-slate-900/40 backdrop-blur-md p-8 rounded-[2rem] border border-white/5 hover:border-purple-500/30 transition-all duration-300 group">
+                    <div
+                        class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center mb-6 text-purple-400 group-hover:scale-110 transition-transform">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Pengalaman Lebih Personal</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">Jelajahi pengalaman baru yang disesuaikan dengan
+                        gayamu. Nikmati seluruh fitur, kustomisasi profil, dan mode tampilan yang nyaman.</p>
+                </div>
+            </div>
+
+            <!-- Wireframes & IA -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="clean-card rounded-[2rem] overflow-hidden border border-white/5 p-2 flex flex-col">
+                    <div class="px-6 py-4 border-b border-white/5">
+                        <h4 class="font-bold text-white">Wireframes & Ideation</h4>
+                    </div>
+                    <div class="w-full h-72 bg-slate-950 flex-grow rounded-b-2xl overflow-hidden">
+                        <iframe loading="lazy"
+                            class="w-full h-full border-0 opacity-90 hover:opacity-100 transition-opacity"
+                            src="https://embed.figma.com/design/wlqMyIOrvC955yutLQ2fUb/Untitled?node-id=2-1868&embed-host=share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="clean-card rounded-[2rem] overflow-hidden border border-white/5 p-2 flex flex-col">
+                    <div class="px-6 py-4 border-b border-white/5">
+                        <h4 class="font-bold text-white">Information Architecture</h4>
+                    </div>
+                    <div class="w-full h-72 bg-slate-950 flex-grow rounded-b-2xl overflow-hidden">
+                        <iframe loading="lazy"
+                            class="w-full h-full border-0 opacity-90 hover:opacity-100 transition-opacity"
+                            src="https://embed.figma.com/design/wlqMyIOrvC955yutLQ2fUb/Untitled?node-id=2-292&embed-host=share"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Prototype Section -->
+    <section id="prototype" class="py-24 relative border-t border-white/5 bg-slate-900/20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span
+                    class="inline-block py-1.5 px-4 rounded-full bg-white/5 text-slate-300 font-bold text-xs uppercase tracking-widest mb-4">Tahap
+                    3: Final Result</span>
+                <h2 class="text-4xl sm:text-6xl font-black text-white mb-6">Interactive <span
+                        class="bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">Prototype</span>
+                </h2>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Jelajahi hasil akhir desain UI/UX kami secara langsung. Klik dan navigasikan layar di bawah ini
+                    untuk melihat alur aplikasinya.
+                </p>
+            </div>
+
+            <div
+                class="w-full max-w-4xl mx-auto rounded-[2rem] border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] bg-slate-900 relative p-2 overflow-hidden">
+                <div
+                    class="flex items-center justify-between px-6 py-4 bg-slate-950/50 rounded-t-[1.5rem] border-b border-white/5">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                        <div class="w-3 h-3 rounded-full bg-slate-700"></div>
+                    </div>
+                    <span
+                        class="text-xs text-slate-500 font-mono tracking-widest uppercase font-semibold">dawg-app.prototype</span>
                     <div class="w-4"></div>
                 </div>
 
-                <div class="w-full aspect-video">
-
-                    <iframe class="w-full h-full border-0" style="border: 1px solid rgba(0, 0, 0, 0.1);" src="https://embed.figma.com/proto/WOrzt18xiLO52rRqSq3EpA/DAWG?node-id=79-385&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share" allowfullscreen></iframe>
+                <div class="w-full aspect-[4/3] sm:aspect-[16/9] bg-slate-950 rounded-b-[1.5rem] overflow-hidden">
+                    <iframe loading="lazy" class="w-full h-full border-0"
+                        src="https://embed.figma.com/proto/WOrzt18xiLO52rRqSq3EpA/DAWG?node-id=79-385&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&embed-host=share"
+                        allowfullscreen></iframe>
                 </div>
             </div>
 
-            <div class="mt-8 text-center">
-                <p class="text-xs text-slate-400 mb-3">Mengalami kendala saat memuat frame di atas?</p>
-                <a href="https://www.figma.com/proto/WOrzt18xiLO52rRqSq3EpA/DAWG?node-id=79-385&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank" class="inline-flex items-center gap-2 text-sm font-semibold text-emerald-600 hover:text-emerald-500 transition-colors">
-                    Buka Figma di Tab Baru 
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            <div class="mt-12 text-center">
+                <a href="https://www.figma.com/proto/WOrzt18xiLO52rRqSq3EpA/DAWG?node-id=79-385&scaling=scale-down&content-scaling=fixed&page-id=0%3A1"
+                    target="_blank"
+                    class="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-white/5 hover:bg-brand text-white font-semibold transition-all duration-300 border border-white/10 hover:border-brand">
+                    Buka Fullscreen di Tab Baru
+                    <svg class="w-5 h-5 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                    </svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-            <p class="text-sm">
-                &copy; 2026 StudioProjek. Didesain & Dikoding Sendiri dari Nol.
-            </p>
-            <div class="flex gap-6 text-sm font-medium">
-                <a href="https://github.com" target="_blank" class="hover:text-white transition-colors">GitHub</a>
-                <a href="https://linkedin.com" target="_blank" class="hover:text-white transition-colors">LinkedIn</a>
+    <!-- Test Section -->
+    <section id="test" class="py-24 relative border-t border-white/5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-4xl sm:text-5xl font-black text-white mb-6">5. <span class="text-brand">Test</span></h2>
+                <div class="w-16 h-1 bg-brand mx-auto mb-8 rounded-full"></div>
+                <p class="text-lg text-slate-300 leading-relaxed mb-6">
+                    Pengujian berfokus pada masalah inti pengguna: memastikan kecepatan, transparansi tarif, dan
+                    kemudahan dalam proses pemesanan perjalanan.
+                </p>
+                <p class="text-md text-slate-400 leading-relaxed bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <strong class="text-white">Contoh Task:</strong> "Kamu sedang buru-buru untuk pergi ke kampus dan
+                    butuh ojek online dengan segera. Coba lakukan pemesanan perjalanan dari lokasimu saat ini menuju
+                    kampus dengan aplikasi DAWG."
+                </p>
             </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <!-- User Profile Card -->
+                <div class="clean-card rounded-[2rem] overflow-hidden flex flex-col border border-white/5 h-full">
+                    <div class="flex-grow bg-slate-800 relative min-h-[320px]">
+                        <!-- Menggunakan placeholder gambar responden -->
+                        <img src="img/test.jpeg" alt="Iqbal Abdullah"
+                            class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent">
+                        </div>
+                    </div>
+                    <div class="p-8 bg-[#0f172a] shrink-0">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-1">Bagus Dananjaya</h3>
+                            <p class="text-slate-400 text-sm mb-4">Mahasiswa, 19 Tahun</p>
+                            <p class="text-slate-300 italic">"Sering menggunakan ojol untuk ke kampus namun butuh
+                                aplikasi yang lebih cepat dan transparan."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Methods & Tasks -->
+                <div class="flex flex-col gap-8">
+                    <!-- Metode Testing -->
+                    <div class="clean-card rounded-[2rem] p-8 border border-white/5">
+                        <h4 class="text-lg font-bold text-white mb-5">Metode Testing</h4>
+                        <ul class="space-y-4 text-slate-300">
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand mt-0.5">•</span>
+                                <div><strong class="text-white">Metode:</strong> Qualitative Testing</div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand mt-0.5">•</span>
+                                <div><strong class="text-white">Teknik:</strong> Task-based testing + wawancara singkat
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-brand mt-0.5">•</span>
+                                <div><strong class="text-white">Jumlah Responden:</strong> 1 orang</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Hasil Pengujian Task -->
+                    <div class="clean-card rounded-[2rem] p-8 border border-white/5 flex-grow">
+                        <h4 class="text-lg font-bold text-white mb-6">Hasil Pengujian Task</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left border-collapse">
+                                <thead>
+                                    <tr class="border-b border-white/10 text-slate-400 text-sm">
+                                        <th class="pb-4 font-semibold w-1/2">Task</th>
+                                        <th class="pb-4 font-semibold w-1/4">Status</th>
+                                        <th class="pb-4 font-semibold w-1/4">Catatan</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-sm">
+                                    <tr class="border-b border-white/5">
+                                        <td class="py-4 text-slate-300">Membuka App & Beranda</td>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                                <svg class="w-4 h-4 bg-emerald-500/20 rounded-sm p-0.5" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                                Berhasil
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Mudah dipahami</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="py-4 text-slate-300">Input Lokasi</td>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                                <svg class="w-4 h-4 bg-emerald-500/20 rounded-sm p-0.5" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                                Berhasil
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Alur jelas</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="py-4 text-slate-300">Estimasi & Pesan</td>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                                <svg class="w-4 h-4 bg-emerald-500/20 rounded-sm p-0.5" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                                Berhasil
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Harga jelas</td>
+                                    </tr>
+                                    <tr class="border-b border-white/5">
+                                        <td class="py-4 text-slate-300">Pencarian Driver</td>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                                <svg class="w-4 h-4 bg-emerald-500/20 rounded-sm p-0.5" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                                Berhasil
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Status dimengerti</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-4 text-slate-300">Selesai Perjalanan</td>
+                                        <td class="py-4">
+                                            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold">
+                                                <svg class="w-4 h-4 bg-emerald-500/20 rounded-sm p-0.5" fill="none"
+                                                    stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        stroke-width="3" d="M5 13l4 4L19 7"></path>
+                                                </svg>
+                                                Berhasil
+                                            </div>
+                                        </td>
+                                        <td class="py-4 text-slate-400">Konsisten</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback & Improvements -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Feedback Pengguna -->
+                <div class="clean-card rounded-[2rem] p-8 border border-white/5">
+                    <h4 class="text-lg font-bold text-brand mb-6">Feedback Pengguna</h4>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="text-white font-medium mb-3 text-sm sm:text-base">Q1: Bagaimana pengalamanmu saat
+                                melihat estimasi harga sebelum memesan?</p>
+                            <div class="border-l-2 border-brand/50 pl-4 py-1">
+                                <p class="text-slate-400 text-sm italic leading-relaxed">"Sangat jelas dan transparan.
+                                    Saya suka karena tarifnya langsung terlihat di awal dan tidak ada biaya tersembunyi
+                                    yang bikin kaget."</p>
+                            </div>
+                        </div>
+                        <div>
+                            <p class="text-white font-medium mb-3 text-sm sm:text-base">Q2: Adakah kendala atau bagian
+                                yang membingungkan saat proses pemesanan?</p>
+                            <div class="border-l-2 border-brand/50 pl-4 py-1">
+                                <p class="text-slate-400 text-sm italic leading-relaxed">"Secara keseluruhan sangat
+                                    lancar, tapi tombol untuk chat dengan driver saat menunggu jemputan terasa kurang
+                                    menonjol."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hasil & Perbaikan -->
+                <div class="clean-card rounded-[2rem] p-8 border border-white/5">
+                    <h4 class="text-lg font-bold text-emerald-400 mb-6">Hasil & Perbaikan (Improvement)</h4>
+                    <div class="space-y-4">
+                        <div class="bg-rose-500/5 border border-rose-500/10 rounded-2xl p-5">
+                            <p class="text-sm leading-relaxed">
+                                <strong class="text-rose-400 block mb-1">Before:</strong>
+                                <span class="text-slate-300">Tombol "Chat Driver" kurang terlihat dan menyatu dengan
+                                    informasi kendaraan.</span>
+                            </p>
+                        </div>
+                        <div class="bg-emerald-500/5 border border-emerald-500/10 rounded-2xl p-5">
+                            <p class="text-sm leading-relaxed">
+                                <strong class="text-emerald-400 block mb-1">After:</strong>
+                                <span class="text-slate-300">Mengubah warna dan memperbesar ukuran tombol "Chat Driver",
+                                    serta menempatkannya di area yang lebih strategis pada layar status penjemputan agar
+                                    lebih mudah diakses.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kesimpulan -->
+            <div class="clean-card rounded-[2rem] p-8 border border-white/5 mt-8">
+                <h4 class="text-lg font-bold text-brand mb-3">Kesimpulan</h4>
+                <p class="text-slate-300 text-sm leading-relaxed">
+                    Berdasarkan hasil testing, pengguna secara umum dapat menyelesaikan task dengan baik dan memahami
+                    alur aplikasi. Secara keseluruhan desain sudah menjawab masalah user, dengan improvement minor pada
+                    visibilitas tombol kontak driver agar lebih intuitif.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="py-24 relative overflow-hidden border-t border-white/5">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div
+                class="max-w-3xl mx-auto bg-slate-900/50 backdrop-blur-md rounded-[2.5rem] border border-white/10 p-8 sm:p-12 shadow-2xl relative overflow-hidden group">
+                <!-- Decorative BG for profile -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-brand rounded-full blur-[100px] opacity-20"></div>
+
+                <div
+                    class="relative flex flex-col items-center text-center sm:flex-row sm:text-left sm:items-center gap-8 sm:gap-10">
+
+                    <!-- Avatar Area -->
+                    <div class="relative flex-shrink-0 mx-auto sm:mx-0">
+                        <div
+                            class="relative w-32 h-32 rounded-full overflow-hidden border-4 border-slate-800 shadow-xl bg-slate-900 flex items-center justify-center group-hover:scale-105 transition duration-500 group-hover:border-brand/50">
+                            <!-- Profile Picture -->
+                            <img src="img/gw.jpeg" alt="Profile Picture" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+
+                    <!-- Profile Info -->
+                    <div class="flex-grow space-y-4">
+                        <div>
+                            <p class="text-brand font-bold tracking-widest text-xs uppercase mb-1">UI/UX Designer</p>
+                            <h3 class="text-3xl font-black text-white mb-2">Gian Yudha Pratama</h3>
+                            <p class="text-sm font-medium text-slate-400 leading-relaxed">
+                                Senang merancang antarmuka yang bersih, intuitif, dan nyaman dipandang. Fokus pada
+                                pemecahan masalah melalui desain yang empatik.
+                            </p>
+                        </div>
+
+                        <!-- Social Media Links -->
+                        <div class="pt-4 flex flex-wrap justify-center sm:justify-start gap-3">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/benisikatgigi?igsh=MXIzcGptaDRoMGh1eA==" target="_blank"
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-rose-500 hover:text-white hover:border-rose-500 transition-all duration-300"
+                                aria-label="Instagram">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                                </svg>
+                            </a>
+                            <!-- LinkedIn -->
+                            <a href="https://www.linkedin.com/in/gian-yudha-pratama-7abb8a368?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                                target="_blank"
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-[#0077b5] hover:text-white hover:border-[#0077b5] transition-all duration-300"
+                                aria-label="LinkedIn">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                </svg>
+                            </a>
+                            <!-- GitHub -->
+                            <a href="https://github.com/GianYudha7777" target="_blank"
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-white hover:text-slate-900 hover:border-white transition-all duration-300"
+                                aria-label="GitHub">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.48 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.577.688.479C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                                </svg>
+                            </a>
+                            <!-- Facebook -->
+                            <a href="https://www.facebook.com/share/1Ja59dEa8V/" target="_blank"
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-[#1877F2] hover:text-white hover:border-[#1877F2] transition-all duration-300"
+                                aria-label="Facebook">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                                </svg>
+                            </a>
+                            <!-- Email -->
+                            <a href="mailto:gianyudha03@gmail.com"
+                                class="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:bg-red-500 hover:text-white hover:border-red-500 transition-all duration-300"
+                                aria-label="Email">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-slate-950 py-10">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+            <p class="text-sm text-slate-500 font-medium text-center">
+                &copy; 2026 DAWG Project.
+            </p>
         </div>
     </footer>
 
 </body>
+
 </html>
