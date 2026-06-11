@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <script>
@@ -123,6 +123,7 @@
                 <a href="#hero" class="hover:text-brand transition-colors">Overview</a>
                 <a href="#define" class="hover:text-brand transition-colors">Riset</a>
                 <a href="#ideate" class="hover:text-brand transition-colors">Fitur</a>
+                <a href="#uikit" class="hover:text-brand transition-colors">UI Kit</a>
                 <a href="#prototype" class="hover:text-brand transition-colors">Prototype</a>
                 <a href="#test" class="hover:text-brand transition-colors">Test</a>
                 <a href="#profile" class="hover:text-brand transition-colors">Kreator</a>
@@ -412,6 +413,359 @@
                 </div>
             </div>
 
+        </div>
+    </section>
+
+    <!-- UI Kit Section -->
+    <section id="uikit" class="py-24 relative border-t border-white/5">
+        <div class="mx-auto max-w-[1300px] px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand font-bold tracking-widest uppercase text-sm mb-2 block">Tahap 3: Design System</span>
+                <h2 class="text-4xl sm:text-5xl font-black text-white mb-4">DAWG <span class="text-brand">UI Kit</span></h2>
+                <p class="text-lg text-slate-400 leading-relaxed">
+                    Spesifikasi visual yang mencakup palet warna, tipografi, dan komponen antarmuka yang konsisten.
+                </p>
+            </div>
+
+            <!-- UI Kit Board Container -->
+            <div class="bg-[#F4F6F8] rounded-[2rem] p-6 sm:p-10 shadow-2xl border border-white/10 mx-auto font-['DM_Sans',sans-serif] text-[#111827]">
+                
+                <!-- Header -->
+                <header class="flex justify-between items-center mb-10">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-[#0A6C44] text-white rounded-xl flex items-center justify-center font-bold text-xl shadow-sm">
+                            DG
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold leading-tight text-[#111827] font-['DM_Sans'] m-0">DAWG UI Kit</h1>
+                            <p class="text-[#6B7280] text-sm m-0">Design System • v1.0</p>
+                        </div>
+                    </div>
+                    <div class="bg-[#E1F5EE] text-[#0A6C44] px-4 py-2 rounded-full text-sm font-semibold border border-[#0A6C44]/10 hidden sm:block">
+                        Forest Green • #0A6C44
+                    </div>
+                </header>
+
+                <!-- Grid Layout -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left">
+                    
+                    <!-- 1. Palet Warna -->
+                    <div class="col-span-1 lg:col-span-3 bg-white border border-[#E5E7EB] rounded-2xl p-6">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">1 • Palet Warna</h2>
+                        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                            <!-- Color Items -->
+                            <div>
+                                <div class="w-full h-20 bg-[#0A6C44] rounded-xl mb-3 shadow-sm"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Primary Green</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#0A6C44</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#085034] rounded-xl mb-3 shadow-sm"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Green Dark</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#085034</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#E1F5EE] rounded-xl mb-3 shadow-sm border border-[#E5E7EB]"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Green Light</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#E1F5EE</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#FFFFFF] rounded-xl mb-3 shadow-sm border border-[#E5E7EB]"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Background White</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#FFFFFF</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#F9FAFB] rounded-xl mb-3 shadow-sm border border-[#E5E7EB]"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Surface Gray</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#F9FAFB</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#111827] rounded-xl mb-3 shadow-sm"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Text Primary</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#111827</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#6B7280] rounded-xl mb-3 shadow-sm"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Text Secondary</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#6B7280</p>
+                            </div>
+                            <div>
+                                <div class="w-full h-20 bg-[#E5E7EB] rounded-xl mb-3 shadow-sm border border-[#E5E7EB]"></div>
+                                <p class="text-sm font-semibold text-[#111827] font-['DM_Sans'] m-0">Border</p>
+                                <p class="text-xs text-[#6B7280] mt-0.5 m-0">#E5E7EB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Tipografi -->
+                    <div class="col-span-1 lg:col-span-2 bg-white border border-[#E5E7EB] rounded-2xl p-6">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">2 • Tipografi</h2>
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-[150px_1fr] items-center">
+                                <div>
+                                    <p class="text-[11px] font-bold text-[#6B7280] mb-0.5">HEADING H1</p>
+                                    <p class="text-[11px] text-[#6B7280] m-0">24px • Bold 700</p>
+                                </div>
+                                <h1 class="text-2xl font-bold text-[#111827] font-['DM_Sans'] m-0">Judul Halaman Utama</h1>
+                            </div>
+                            <div class="grid grid-cols-[150px_1fr] items-center">
+                                <div>
+                                    <p class="text-[11px] font-bold text-[#6B7280] mb-0.5">HEADING H2</p>
+                                    <p class="text-[11px] text-[#6B7280] m-0">20px • SemiBold 600</p>
+                                </div>
+                                <h2 class="text-xl font-semibold text-[#111827] font-['DM_Sans'] m-0">Judul Modal & Section</h2>
+                            </div>
+                            <div class="grid grid-cols-[150px_1fr] items-center">
+                                <div>
+                                    <p class="text-[11px] font-bold text-[#6B7280] mb-0.5">BODY REGULAR</p>
+                                    <p class="text-[11px] text-[#6B7280] m-0">15px • Regular 400</p>
+                                </div>
+                                <p class="text-[15px] text-[#111827] font-['DM_Sans'] m-0">Label input dan teks biasa aplikasi</p>
+                            </div>
+                            <div class="grid grid-cols-[150px_1fr] items-center">
+                                <div>
+                                    <p class="text-[11px] font-bold text-[#6B7280] mb-0.5">BUTTON TEXT</p>
+                                    <p class="text-[11px] text-[#6B7280] m-0">15px • Medium 500</p>
+                                </div>
+                                <div>
+                                    <span class="bg-[#0A6C44] text-white text-[15px] font-medium px-4 py-2 rounded-lg inline-block font-['DM_Sans']">Teks Tombol</span>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[150px_1fr] items-center">
+                                <div>
+                                    <p class="text-[11px] font-bold text-[#6B7280] mb-0.5">PLACEHOLDER</p>
+                                    <p class="text-[11px] text-[#6B7280] m-0">14px • Regular 400</p>
+                                </div>
+                                <p class="text-sm text-[#6B7280] font-['DM_Sans'] m-0">Teks bantuan & placeholder</p>
+                            </div>
+                            <div class="grid grid-cols-[150px_1fr] items-center">
+                                <div>
+                                    <p class="text-[11px] font-bold text-[#6B7280] mb-0.5">CAPTION</p>
+                                    <p class="text-[11px] text-[#6B7280] m-0">12px • Regular 400</p>
+                                </div>
+                                <p class="text-xs text-[#6B7280] font-['DM_Sans'] m-0">Font: DM Sans • Sans-Serif</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Tombol -->
+                    <div class="col-span-1 bg-white border border-[#E5E7EB] rounded-2xl p-6">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">3 • Tombol</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Primary Button</p>
+                                <button class="w-full bg-[#0A6C44] text-white text-[15px] font-medium py-3 px-4 rounded-xl hover:bg-[#085034] transition shadow-sm font-['DM_Sans']">Konfirmasi Sekarang</button>
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Ghost / Secondary</p>
+                                <button class="w-full bg-white text-[#0A6C44] text-[15px] font-medium py-3 px-4 rounded-xl border border-[#0A6C44] hover:bg-[#E1F5EE] transition font-['DM_Sans']">Batal</button>
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Small Actions</p>
+                                <div class="flex gap-2">
+                                    <button class="bg-[#0A6C44] text-white text-sm font-medium py-1.5 px-4 rounded-lg hover:bg-[#085034] transition font-['DM_Sans']">Simpan</button>
+                                    <button class="bg-white text-[#0A6C44] text-sm font-medium py-1.5 px-4 rounded-lg border border-[#0A6C44] hover:bg-[#E1F5EE] transition font-['DM_Sans']">Edit</button>
+                                    <button class="bg-[#F9FAFB] text-[#6B7280] text-sm font-medium py-1.5 px-4 rounded-lg border border-[#E5E7EB] hover:bg-[#E5E7EB] transition font-['DM_Sans']">Nonaktif</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Kolom Input -->
+                    <div class="col-span-1 bg-white border border-[#E5E7EB] rounded-2xl p-6">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">4 • Kolom Input</h2>
+                        <div class="space-y-5">
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Dengan Ikon kiri</p>
+                                <div class="flex items-center border border-[#E5E7EB] rounded-xl px-3 py-2.5 bg-white">
+                                    <svg class="w-5 h-5 text-blue-500 mr-2 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                    <input type="text" placeholder="Nama pengguna" class="w-full outline-none text-sm placeholder:text-[#6B7280] text-[#111827] bg-transparent font-['DM_Sans'] m-0 p-0 border-0 focus:ring-0">
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Teks biasa (focused)</p>
+                                <input type="email" value="contoh@email.com" class="w-full border-2 border-[#0A6C44] rounded-xl px-4 py-2.5 outline-none text-sm ring-2 ring-[#0A6C44]/10 text-[#111827] bg-transparent font-['DM_Sans'] m-0">
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Password + ikon kanan</p>
+                                <div class="flex items-center border border-[#E5E7EB] rounded-xl px-4 py-2.5 bg-white">
+                                    <input type="password" value="secretpassword" class="w-full outline-none text-sm tracking-widest text-[#111827] bg-transparent font-['DM_Sans'] m-0 p-0 border-0 focus:ring-0">
+                                    <svg class="w-5 h-5 text-[#6B7280] cursor-pointer hover:text-[#111827] transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-xs text-[#6B7280] mb-2 font-['DM_Sans']">Error state</p>
+                                <input type="text" value="email tidak valid" class="w-full border border-red-500 rounded-xl px-4 py-2.5 outline-none text-sm text-red-500 bg-transparent font-['DM_Sans'] m-0">
+                                <p class="text-[11px] text-red-500 mt-1.5 flex items-center font-['DM_Sans'] m-0">
+                                    <svg class="w-3.5 h-3.5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                    Format email tidak valid
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Modal / Dialog -->
+                    <div class="col-span-1 bg-white border border-[#E5E7EB] rounded-2xl p-6 flex flex-col">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">5 • Modal / Dialog</h2>
+                        <div class="bg-[#111827]/40 rounded-2xl p-4 flex items-center justify-center flex-grow min-h-[300px]">
+                            <div class="bg-white rounded-2xl p-6 w-full max-w-[280px] shadow-xl text-left">
+                                <div class="w-10 h-10 bg-red-50 text-red-500 rounded-xl flex items-center justify-center mb-4">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                                </div>
+                                <h3 class="font-bold text-[17px] text-[#111827] mb-2 font-['DM_Sans'] m-0">Hapus Data?</h3>
+                                <p class="text-sm text-[#6B7280] mb-6 leading-relaxed font-['DM_Sans'] m-0">Data yang dihapus tidak dapat dikembalikan. Pastikan Anda sudah yakin sebelum melanjutkan.</p>
+                                <div class="flex gap-3">
+                                    <button class="flex-1 bg-[#F9FAFB] text-[#111827] font-medium py-2.5 rounded-xl text-sm border border-[#E5E7EB] hover:bg-[#E5E7EB] transition font-['DM_Sans']">Batal</button>
+                                    <button class="flex-1 bg-[#0A6C44] text-white font-medium py-2.5 rounded-xl text-sm hover:bg-[#085034] transition shadow-sm font-['DM_Sans']">Ya, Hapus</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. App Header -->
+                    <div class="col-span-1 bg-white border border-[#E5E7EB] rounded-2xl p-6">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">6 • App Header</h2>
+                        <div class="space-y-6">
+                            <div class="bg-[#0A6C44] text-white rounded-2xl p-4 flex items-center justify-between shadow-sm">
+                                <div class="flex items-center gap-3">
+                                    <svg class="w-5 h-5 cursor-pointer hover:text-white/80 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+                                    <span class="font-bold text-[15px] font-['DM_Sans']">Dashboard Utama</span>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="relative cursor-pointer hover:text-white/80 transition">
+                                        <svg class="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+                                        <div class="absolute -top-0.5 -right-0.5 w-2 h-2 bg-red-500 rounded-full border-2 border-[#0A6C44]"></div>
+                                    </div>
+                                    <svg class="w-6 h-6 cursor-pointer hover:text-white/80 transition shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                                </div>
+                            </div>
+
+                            <div class="border border-[#E5E7EB] rounded-2xl p-4">
+                                <div class="flex justify-between items-center mb-3">
+                                    <span class="text-sm font-medium text-[#111827] font-['DM_Sans']">Progres Tugas</span>
+                                    <span class="text-sm font-bold text-[#0A6C44] font-['DM_Sans']">68%</span>
+                                </div>
+                                <div class="w-full bg-[#E5E7EB] rounded-full h-2">
+                                    <div class="bg-[#0A6C44] h-2 rounded-full" style="width: 68%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. List Items & Cards -->
+                    <div class="col-span-1 bg-white border border-[#E5E7EB] rounded-2xl p-6">
+                        <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">7 • List Items & Cards</h2>
+                        <div class="border border-[#E5E7EB] rounded-2xl divide-y divide-[#E5E7EB] overflow-hidden">
+                            <div class="flex items-center justify-between p-4 hover:bg-[#F9FAFB] transition cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-5 h-5 bg-[#0A6C44] text-white rounded-[6px] flex items-center justify-center shrink-0">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span class="text-[15px] font-medium text-[#111827] font-['DM_Sans']">Daftar akun baru</span>
+                                </div>
+                                <svg class="w-4 h-4 text-[#6B7280] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                            <div class="flex items-center justify-between p-4 hover:bg-[#F9FAFB] transition cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-5 h-5 bg-[#0A6C44] text-white rounded-[6px] flex items-center justify-center shrink-0">
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                    </div>
+                                    <span class="text-[15px] font-medium text-[#111827] font-['DM_Sans']">Verifikasi email</span>
+                                </div>
+                                <svg class="w-4 h-4 text-[#6B7280] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                            <div class="flex items-center justify-between p-4 hover:bg-[#F9FAFB] transition cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-5 h-5 border-2 border-[#E5E7EB] rounded-[6px] shrink-0"></div>
+                                    <span class="text-[15px] font-medium text-[#111827] font-['DM_Sans']">Lengkapi profil</span>
+                                </div>
+                                <svg class="w-4 h-4 text-[#6B7280] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                            <div class="flex items-center justify-between p-4 hover:bg-[#F9FAFB] transition cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-5 h-5 border-2 border-[#E5E7EB] rounded-[6px] shrink-0"></div>
+                                    <span class="text-[15px] font-medium text-[#111827] font-['DM_Sans']">Atur preferensi notifikasi</span>
+                                </div>
+                                <svg class="w-4 h-4 text-[#6B7280] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                            <div class="flex items-center justify-between p-4 hover:bg-[#F9FAFB] transition cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-5 h-5 border-2 border-[#E5E7EB] rounded-[6px] shrink-0"></div>
+                                    <span class="text-[15px] font-medium text-[#111827] font-['DM_Sans']">Hubungkan akun bank</span>
+                                </div>
+                                <svg class="w-4 h-4 text-[#6B7280] shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Radius & Spacing -->
+                    <div class="col-span-1 lg:col-span-2 bg-white border border-[#E5E7EB] rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <h2 class="text-xs font-bold text-[#6B7280] tracking-widest uppercase mb-8 m-0">8 • Radius & Spacing</h2>
+                            <div class="flex flex-wrap justify-between items-end mb-12 text-center text-xs font-medium text-[#6B7280] gap-4 px-4 font-['DM_Sans']">
+                                <div class="flex flex-col items-center">
+                                    <div class="w-16 h-16 bg-[#E1F5EE] mb-3" style="border-radius: 6px;"></div>
+                                    <p class="m-0">6px</p>
+                                    <p class="m-0">Input</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-16 h-16 bg-[#E1F5EE] mb-3" style="border-radius: 8px;"></div>
+                                    <p class="m-0">8px</p>
+                                    <p class="m-0">Button</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-16 h-16 bg-[#E1F5EE] mb-3" style="border-radius: 12px;"></div>
+                                    <p class="m-0">12px</p>
+                                    <p class="m-0">Card</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-20 h-16 bg-[#E1F5EE] mb-3" style="border-radius: 16px;"></div>
+                                    <p class="m-0">16px</p>
+                                    <p class="m-0">Modal</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <div class="w-16 h-16 bg-[#E1F5EE] mb-3" style="border-radius: 99px;"></div>
+                                    <p class="m-0">99px</p>
+                                    <p class="m-0">Pill/Badge</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="text-[11px] font-bold text-[#6B7280] tracking-widest uppercase mb-6 m-0">Spacing Scale</h3>
+                            <div class="flex items-end gap-4 h-16 px-4">
+                                <div class="w-6 bg-[#085034] rounded-sm" style="height: 8px;"></div>
+                                <div class="w-6 bg-[#085034] rounded-sm" style="height: 16px;"></div>
+                                <div class="w-6 bg-[#085034] rounded-sm" style="height: 24px;"></div>
+                                <div class="w-6 bg-[#085034] rounded-sm" style="height: 32px;"></div>
+                                <div class="w-8 bg-[#085034] rounded-sm" style="height: 40px;"></div>
+                                <div class="w-8 bg-[#085034] rounded-sm" style="height: 48px;"></div>
+                                <div class="w-10 bg-[#085034] rounded-sm" style="height: 64px;"></div>
+                            </div>
+                            <div class="flex items-start gap-4 mt-3 text-[11px] text-[#6B7280] font-medium px-4 font-['DM_Sans']">
+                                <div class="w-6 text-center">4</div>
+                                <div class="w-6 text-center">8</div>
+                                <div class="w-6 text-center">12</div>
+                                <div class="w-6 text-center">16</div>
+                                <div class="w-8 text-center">20</div>
+                                <div class="w-8 text-center">24</div>
+                                <div class="w-10 text-center">32</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Footer -->
+                <footer class="mt-12 pt-8 border-t border-[#E5E7EB] flex flex-col sm:flex-row justify-between items-center text-xs font-medium text-[#6B7280] gap-4 font-['DM_Sans']">
+                    <p class="m-0"><span class="font-bold text-[#111827]">DAWG Design System</span> • Forest Green Theme • DM Sans</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-[#F9FAFB] px-4 py-2 rounded-full border border-[#E5E7EB]">Mobile App</span>
+                        <span class="bg-[#F9FAFB] px-4 py-2 rounded-full border border-[#E5E7EB]">Android / iOS</span>
+                        <span class="bg-[#F9FAFB] px-4 py-2 rounded-full border border-[#E5E7EB]">Figma Ready</span>
+                    </div>
+                </footer>
+            </div>
         </div>
     </section>
 
